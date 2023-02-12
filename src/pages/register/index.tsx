@@ -22,7 +22,11 @@ const RegisterPage = () => {
         shape="rounded"
         size="small"
         color="primary"
-        onClick={() => signIn()}
+        onClick={() =>
+          signIn("google", {
+            callbackUrl: "/",
+          })
+        }
       >
         <Icons.google className="mr-2 h-6 w-6 inline" />
         Continue with Google
@@ -65,13 +69,13 @@ export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const session = await getServerAuthSession(context)
-  // if (session) {
-  //   return {
-  //     redirect: {
-  //       destination: "/",
-  //     },
-  //   };
-  // }
+  if (session) {
+    return {
+      redirect: {
+        destination: "/",
+      },
+    }
+  }
   return {
     props: {
       session,

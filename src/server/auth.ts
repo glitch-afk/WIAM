@@ -50,7 +50,7 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(prisma),
   pages: {
-    // signIn: "/register",
+    signIn: "/register",
     newUser: "/register",
   },
   providers: [
