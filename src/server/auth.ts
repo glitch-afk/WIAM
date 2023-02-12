@@ -49,6 +49,10 @@ export const authOptions: NextAuthOptions = {
     },
   },
   adapter: PrismaAdapter(prisma),
+  pages: {
+    // signIn: "/register",
+    newUser: "/register",
+  },
   providers: [
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,

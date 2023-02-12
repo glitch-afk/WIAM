@@ -3,7 +3,10 @@ import { forwardRef, useImperativeHandle, useRef, useState } from "react"
 import { cn } from "@/lib/utils"
 import ButtonDrip from "@/components/ui/button/button-drip"
 import ButtonLoader from "@/components/ui/button/button-loader"
-import { LoaderSizeTypes, LoaderVariantTypes } from "@/components/ui/loader"
+import type {
+  LoaderSizeTypes,
+  LoaderVariantTypes,
+} from "@/components/ui/loader"
 
 type ShapeNames = "rounded" | "pill" | "circle"
 type VariantNames = "ghost" | "solid" | "transparent"
@@ -29,7 +32,7 @@ const variants: Record<VariantNames, string[]> = {
   transparent: ["bg-transparent hover:bg-brand-400"],
 }
 const colors: Record<ColorNames, string[]> = {
-  primary: ["text-brand", "bg-brand-700", "border-brand"],
+  primary: ["text-brand", "bg-brand-700", "border-none"],
   white: ["text-brand-700", "bg-white", "border-white"],
   gray: ["text-gray-900", "bg-brand-600", "border-gray-100"],
   success: ["text-green-500", "bg-green-500", "border-green-500"],
@@ -77,9 +80,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     },
     ref: React.Ref<HTMLButtonElement | null>
   ) => {
-    let [dripShow, setDripShow] = useState<boolean>(false)
-    let [dripX, setDripX] = useState<number>(0)
-    let [dripY, setDripY] = useState<number>(0)
+    const [dripShow, setDripShow] = useState<boolean>(false)
+    const [dripX, setDripX] = useState<number>(0)
+    const [dripY, setDripY] = useState<number>(0)
     const colorClassNames = colors[color]
     const sizeClassNames = sizes[size]
     const buttonRef = useRef<HTMLButtonElement>(null)

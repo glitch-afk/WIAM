@@ -1,12 +1,11 @@
 import React from "react"
 import Link from "next/link"
 import Sidebar from "@/layouts/sidebar/_default"
-import { NavItem } from "@/types"
+import type { NavItem } from "@/types"
 
 import { cn } from "@/lib/utils"
 import { useDrawer } from "./drawer-views/context"
 import { Icons } from "./icons"
-import Button from "./ui/button/button"
 
 interface MainNavProps {
   items?: NavItem[]
@@ -40,6 +39,7 @@ const MainNav = ({ items }: MainNavProps) => {
         {isOpen ? (
           <Sidebar items={items} />
         ) : (
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           <button onClick={openDrawer}>
             <Icons.logo className="w-8 h-8" />

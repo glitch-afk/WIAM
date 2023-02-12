@@ -4,14 +4,12 @@
     "project": "./tsconfig.json"
   },
   "plugins": [
-    "tailwindcss",
     "@typescript-eslint"
   ],
   "extends": [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "plugin:tailwindcss/recommended"
+    "prettier"
   ],
   "rules": {
     "@typescript-eslint/consistent-type-imports": "warn",
