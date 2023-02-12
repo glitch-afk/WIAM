@@ -5,13 +5,13 @@ import type { NavItem } from "@/types"
 import { siteConfig } from "@/config/site"
 import { Icons } from "@/components/icons"
 import MainNav from "@/components/main-nav"
-import Button from "@/components/ui/button"
 
 interface MainNavProps {
+  children: React.ReactNode
   items?: NavItem[]
 }
 
-const SiteHeader = ({ items }: MainNavProps) => {
+const SiteHeader = ({ items, children }: MainNavProps) => {
   return (
     <div className="sticky top-0 z-40 w-full flex space-between items-center">
       <Link href="/" className="w-full hidden md:flex items-center">
@@ -25,18 +25,7 @@ const SiteHeader = ({ items }: MainNavProps) => {
         <MainNav items={items} />
       </div>
       {/* right nav */}
-      <div className="justify-end space-x-4 w-full flex">
-        <Button variant="transparent" size="mini" shape="pill" color="primary">
-          Log in
-        </Button>
-        <Link
-          href="/register"
-          className="bg-white rounded-full px-4 h-8 text-brand-700 text-center flex items-center font-medium text-sm"
-        >
-          Get Started
-          <Icons.rightArrow className="inline h-4 w-4 ml-1" />
-        </Link>
-      </div>
+      <div className="justify-end space-x-4 w-full flex">{children}</div>
     </div>
   )
 }

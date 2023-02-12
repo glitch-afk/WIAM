@@ -12,7 +12,7 @@ import { Label } from "@/components/ui/label"
 const RegisterPage = () => {
   return (
     <div className="w-full max-w-md rounded-xl border-2 border-brand-500 bg-brand-600 p-4">
-      <h2 className="my-5 text-center text-xl font-semibold text-brand-50">
+      <h2 className="my-5 text-center text-xl font-semibold">
         Create your Account
       </h2>
       {/* signin with google */}
