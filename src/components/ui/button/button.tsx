@@ -26,11 +26,11 @@ const shapes: Record<ShapeNames, string[]> = {
 const variants: Record<VariantNames, string[]> = {
   ghost: ["bg-transparent"],
   solid: ["text-white"],
-  transparent: ["bg-transparent hover:bg-gray-50 dark:hover:bg-gray-800"],
+  transparent: ["bg-transparent hover:bg-brand-400"],
 }
 const colors: Record<ColorNames, string[]> = {
   primary: ["text-brand", "bg-brand-700", "border-brand"],
-  white: ["text-gray-900", "bg-white", "border-white"],
+  white: ["text-brand-700", "bg-white", "border-white"],
   gray: ["text-gray-900", "bg-brand-600", "border-gray-100"],
   success: ["text-green-500", "bg-green-500", "border-green-500"],
   info: ["text-blue-500", "bg-blue-500", "border-blue-500"],
@@ -109,9 +109,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
       case "transparent":
         buttonColorClassNames = `${colorClassNames[0]} ${
-          disabled || isLoading
-            ? ""
-            : "hover:bg-gray-100 dark:hover:bg-gray-800 focus:bg-gray-100 dark:focus:bg-gray-800"
+          disabled || isLoading ? "" : "hover:bg-gray-800 focus:bg-gray-800"
         } `
         buttonDripColor = "rgba(0, 0, 0, 0.1)"
         break
@@ -133,11 +131,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
             : "cursor-not-allowed bg-gray-100 text-gray-400",
           disabled || isLoading || variant === "transparent"
             ? ""
-            : "hover:-translate-y-0.5 hover:shadow-large focus:-translate-y-0.5 focus:shadow-large focus:outline-none",
+            : "hover:shadow-large focus:shadow-large focus:outline-none",
           isLoading && "pointer-events-auto cursor-default focus:outline-none",
           fullWidth && "w-full",
           color === "white" || color === "gray"
-            ? "text-gray-900 dark:text-white"
+            ? "text-gray-900"
             : variants[variant],
           shapes[shape],
           shape === "circle" ? `${sizeClassNames[1]}` : `${sizeClassNames[0]}`,
