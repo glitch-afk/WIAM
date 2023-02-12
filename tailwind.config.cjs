@@ -7,9 +7,6 @@ module.exports = {
     container: {
       center: true,
       padding: "1.5rem",
-      screens: {
-        "2xl": "1360px",
-      },
     },
     extend: {
       fontFamily: {
@@ -26,6 +23,9 @@ module.exports = {
           600: "#111318",
           700: "#0D0E12"
         },
+      },
+      maxWidth: {
+        "8xl": "88rem",
       },
       animation: {
         blink: 'blink 1.4s infinite both;',
