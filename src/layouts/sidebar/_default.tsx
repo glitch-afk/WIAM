@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "next/link"
-import { NavItem } from "@/types"
+import type { NavItem } from "@/types"
 
 import { cn } from "@/lib/utils"
 import { useDrawer } from "@/components/drawer-views/context"
@@ -13,7 +13,7 @@ interface ISidebarProps {
 }
 
 const Sidebar = ({ className, items }: ISidebarProps) => {
-  const { closeDrawer, isOpen } = useDrawer()
+  const { closeDrawer } = useDrawer()
   return (
     <aside
       className={cn(
@@ -40,6 +40,7 @@ const Sidebar = ({ className, items }: ISidebarProps) => {
         <nav className="flex flex-col px-6 space-y-4 mb-6 text-sm">
           {items.map((item, idx) => (
             <Link
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
               // @ts-ignore
               href={item.disabled ? "#" : item.href}
               key={idx}

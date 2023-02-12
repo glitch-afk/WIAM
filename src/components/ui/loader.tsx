@@ -42,7 +42,7 @@ export default function Loader({
   showOnlyThreeDots,
   className,
 }: LoaderTypes) {
-  let Component = tag
+  const Component = tag
   return (
     <Component
       className={cn(

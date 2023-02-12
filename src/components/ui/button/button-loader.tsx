@@ -1,6 +1,6 @@
 import Loader, {
-  LoaderSizeTypes,
-  LoaderVariantTypes,
+  type LoaderSizeTypes,
+  type LoaderVariantTypes,
 } from "@/components/ui/loader"
 
 export default function ButtonLoader({

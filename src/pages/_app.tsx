@@ -1,10 +1,11 @@
-import { AppProps, type AppType } from "next/app"
+import type { AppProps} from "next/app";
+import { type AppType } from "next/app"
 import { Inter as FontSans } from "@next/font/google"
 import { type Session } from "next-auth"
 import { SessionProvider } from "next-auth/react"
 
 import "../styles/globals.css"
-import { NextPageWithLayout } from "@/types"
+import type { NextPageWithLayout } from "@/types"
 
 const fontSans = FontSans({
   subsets: ["latin"],
