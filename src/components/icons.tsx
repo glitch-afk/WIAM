@@ -1,6 +1,8 @@
 import {
+  ChevronRight,
   LogIn,
   Twitter,
+  X,
   type Icon as LucideIcon,
   type LucideProps,
 } from "lucide-react"
@@ -10,6 +12,8 @@ export type Icon = LucideIcon
 export const Icons = {
   twitter: Twitter,
   arrowUpRight: LogIn,
+  rightArrow: ChevronRight,
+  close: X,
   logo: (props: LucideProps) => (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -20,10 +24,10 @@ export const Icons = {
     >
       <g
         fill="none"
-        stroke="#888888"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
       >
         <path d="M20 11a8.1 8.1 0 0 0-6.986-6.918A8.095 8.095 0 0 0 4.995 8M4 13a8.1 8.1 0 0 0 15 3" />
         <path d="M18 16a1 1 0 1 0 2 0a1 1 0 1 0-2 0M4 8a1 1 0 1 0 2 0a1 1 0 1 0-2 0m5 4a3 3 0 1 0 6 0a3 3 0 1 0-6 0" />
