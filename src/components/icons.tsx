@@ -1,6 +1,7 @@
 import {
   ChevronRight,
   LogIn,
+  LogOut,
   Menu,
   Twitter,
   X,
@@ -12,7 +13,8 @@ export type Icon = LucideIcon
 
 export const Icons = {
   twitter: Twitter,
-  arrowUpRight: LogIn,
+  login: LogIn,
+  logout: LogOut,
   rightArrow: ChevronRight,
   menu: Menu,
   close: X,

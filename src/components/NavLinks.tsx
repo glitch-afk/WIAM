@@ -10,17 +10,12 @@ interface IMainNavProps {
   classes?: string
 }
 
-const MainNav = ({ items, classes }: IMainNavProps) => {
+const NavLinks = ({ items, classes }: IMainNavProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<null | number>(null)
   return (
     <>
       {items?.length ? (
-        <nav
-          className={cn(
-            "hidden md:flex items-center justify-between w-full",
-            classes
-          )}
-        >
+        <nav className={cn("w-full", classes)}>
           {items.map((item, idx) =>
             item.external ? (
               <motion.a
@@ -82,4 +77,4 @@ const MainNav = ({ items, classes }: IMainNavProps) => {
   )
 }
 
-export default MainNav
+export default NavLinks
