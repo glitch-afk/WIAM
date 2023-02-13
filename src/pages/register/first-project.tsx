@@ -1,5 +1,5 @@
 import React, { type ReactElement } from "react"
-import OnboardingLayout from "@/layouts/_onboarding"
+import DefaultLayout from "@/layouts/_default"
 
 import { Icons } from "@/components/icons"
 import Button from "@/components/ui/button/button"
@@ -41,21 +41,23 @@ const AddProject = () => {
 
 const Slot = () => {
   return (
-    <Button size="small" variant="solid" color="gray" shape="rounded">
-      <Icons.arrowUpRight className="w-4 h-4 inline mr-2" />
-      Log Out
-    </Button>
+    <div className="col-start-3 flex justify-end">
+      <Button size="small" variant="solid" color="gray" shape="rounded">
+        <Icons.arrowUpRight className="w-4 h-4 inline mr-2" />
+        Log Out
+      </Button>
+    </div>
   )
 }
 
 AddProject.getLayout = function getLayout(page: ReactElement) {
   return (
-    <OnboardingLayout
+    <DefaultLayout
       contentClassName="flex min-h-[90vh] w-full items-center justify-center"
-      slot={<Slot />}
+      pageNav={<Slot />}
     >
       {page}
-    </OnboardingLayout>
+    </DefaultLayout>
   )
 }
 
