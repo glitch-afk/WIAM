@@ -1,6 +1,6 @@
 import React, { type ReactElement } from "react"
 import type { GetServerSidePropsContext } from "next"
-import OnboardingLayout from "@/layouts/_onboarding"
+import DefaultLayout from "@/layouts/_default"
 import { getServerAuthSession } from "@/server/auth"
 import { signIn } from "next-auth/react"
 
@@ -62,21 +62,23 @@ const RegisterPage = () => {
 
 const Slot = () => {
   return (
-    <Button size="small" variant="solid" color="gray" shape="rounded">
-      <Icons.arrowUpRight className="w-4 h-4 inline mr-2" />
-      Log In
-    </Button>
+    <div className="col-start-3 justify-end flex">
+      <Button size="small" variant="solid" color="gray" shape="rounded">
+        <Icons.arrowUpRight className="w-4 h-4 inline mr-2" />
+        Log In
+      </Button>
+    </div>
   )
 }
 
 RegisterPage.getLayout = function getLayout(page: ReactElement) {
   return (
-    <OnboardingLayout
+    <DefaultLayout
       contentClassName="flex min-h-[90vh] w-full items-center justify-center"
-      slot={<Slot />}
+      pageNav={<Slot />}
     >
       {page}
-    </OnboardingLayout>
+    </DefaultLayout>
   )
 }
 

@@ -1,51 +1,37 @@
 import React from "react"
 import Link from "next/link"
-import Sidebar from "@/layouts/sidebar/_default"
 import type { NavItem } from "@/types"
 
-import { cn } from "@/lib/utils"
-import { useDrawer } from "./drawer-views/context"
-import { Icons } from "./icons"
-
-interface MainNavProps {
-  items?: NavItem[]
+interface IMainNavProps {
+  items: NavItem[]
 }
 
-const MainNav = ({ items }: MainNavProps) => {
-  const { isOpen, openDrawer } = useDrawer()
+const MainNav = ({ items }: IMainNavProps) => {
   return (
     <>
       {items?.length ? (
-        <nav className="hidden md:flex justify-between border border-brand-400 rounded-full px-3 py-2">
-          {items?.map(
-            (item, index) =>
-              item.href && (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center text-lg font-semibold text-white hover:text-brand-100 sm:text-sm",
-                    item.disabled && "cursor-not-allowed opacity-80"
-                  )}
-                >
-                  <span className="block w-full">{item.title}</span>
-                </Link>
-              )
+        <nav className="hidden md:flex items-center justify-between border border-brand-400 px-3 py-1 rounded-full w-full max-w-[450px]">
+          {items.map((item, idx) =>
+            item.external ? (
+              <a
+                href={item.disabled ? "#" : item.href}
+                key={idx}
+                className="text-sm font-semibold text-white hover:text-brand-50 transition-colors duration-200"
+              >
+                {item.title}
+              </a>
+            ) : (
+              <Link
+                key={idx}
+                href={item.disabled ? "#" : (item.href as string)}
+                className="text-sm font-semibold text-white hover:text-brand-50 transition-colors duration-200"
+              >
+                {item.title}
+              </Link>
+            )
           )}
         </nav>
       ) : null}
-      {/* mobile */}
-      <div className="md:hidden">
-        {isOpen ? (
-          <Sidebar items={items} />
-        ) : (
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          <button onClick={openDrawer}>
-            <Icons.logo className="w-8 h-8" />
-          </button>
-        )}
-      </div>
     </>
   )
 }

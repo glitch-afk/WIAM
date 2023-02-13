@@ -1,6 +1,7 @@
 import {
   ChevronRight,
   LogIn,
+  Menu,
   Twitter,
   X,
   type Icon as LucideIcon,
@@ -13,6 +14,7 @@ export const Icons = {
   twitter: Twitter,
   arrowUpRight: LogIn,
   rightArrow: ChevronRight,
+  menu: Menu,
   close: X,
   logo: (props: LucideProps) => (
     <svg

@@ -15,9 +15,9 @@ interface ISidebarProps {
 const Sidebar = ({ className, items }: ISidebarProps) => {
   const { closeDrawer } = useDrawer()
   return (
-    <aside
+    <div
       className={cn(
-        "absolute top-0 z-40 h-fit w-full max-w-full inset-x-0 bg-brand-400 xs:w-80 xl:fixed xl:w-72 2xl:w-80 rounded-lg",
+        "md:hidden absolute top-0 z-40 h-fit inset-x-0 bg-brand-600 border border-brand-400 rounded-lg w-full",
         className
       )}
     >
@@ -53,7 +53,7 @@ const Sidebar = ({ className, items }: ISidebarProps) => {
       ) : (
         <></>
       )}
-    </aside>
+    </div>
   )
 }
 
