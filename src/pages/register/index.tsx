@@ -60,23 +60,9 @@ const RegisterPage = () => {
   )
 }
 
-const Slot = () => {
-  return (
-    <div className="col-start-3 justify-end flex">
-      <Button size="small" variant="solid" color="gray" shape="rounded">
-        <Icons.arrowUpRight className="w-4 h-4 inline mr-2" />
-        Log In
-      </Button>
-    </div>
-  )
-}
-
 RegisterPage.getLayout = function getLayout(page: ReactElement) {
   return (
-    <DefaultLayout
-      contentClassName="flex min-h-[90vh] w-full items-center justify-center"
-      pageNav={<Slot />}
-    >
+    <DefaultLayout contentClassName="flex min-h-[90vh] w-full items-center justify-center">
       {page}
     </DefaultLayout>
   )

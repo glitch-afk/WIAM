@@ -31,9 +31,10 @@ const variants: Record<VariantNames, string[]> = {
   solid: ["text-brand-50"],
   transparent: ["bg-transparent hover:bg-brand-400"],
 }
+
 const colors: Record<ColorNames, string[]> = {
   primary: ["text-brand-50", "bg-brand-600", "border-none"],
-  white: ["text-brand-700", "bg-white", "border-white"],
+  white: ["text-brand-700", "bg-white", "border-none"],
   gray: ["text-brand-50", "bg-brand-600", "border-brand-400"],
   success: ["text-green-500", "bg-green-500", "border-green-500"],
   info: ["text-blue-500", "bg-blue-500", "border-blue-500"],

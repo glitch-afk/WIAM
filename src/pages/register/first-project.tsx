@@ -1,7 +1,6 @@
 import React, { type ReactElement } from "react"
 import DefaultLayout from "@/layouts/_default"
 
-import { Icons } from "@/components/icons"
 import Button from "@/components/ui/button/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -39,23 +38,9 @@ const AddProject = () => {
   )
 }
 
-const Slot = () => {
-  return (
-    <div className="col-start-3 flex justify-end">
-      <Button size="small" variant="solid" color="gray" shape="rounded">
-        <Icons.arrowUpRight className="w-4 h-4 inline mr-2" />
-        Log Out
-      </Button>
-    </div>
-  )
-}
-
 AddProject.getLayout = function getLayout(page: ReactElement) {
   return (
-    <DefaultLayout
-      contentClassName="flex min-h-[90vh] w-full items-center justify-center"
-      pageNav={<Slot />}
-    >
+    <DefaultLayout contentClassName="flex min-h-[90vh] w-full items-center justify-center">
       {page}
     </DefaultLayout>
   )
