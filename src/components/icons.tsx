@@ -1,5 +1,6 @@
 import {
   ChevronRight,
+  Loader2,
   LogIn,
   LogOut,
   Menu,
@@ -15,6 +16,7 @@ export const Icons = {
   twitter: Twitter,
   login: LogIn,
   logout: LogOut,
+  loader: Loader2,
   rightArrow: ChevronRight,
   menu: Menu,
   close: X,

@@ -2,9 +2,10 @@ import React from "react"
 import Link from "next/link"
 import type { NavItem } from "@/types"
 import { motion } from "framer-motion"
-import { useSession } from "next-auth/react"
+import { signOut, useSession } from "next-auth/react"
 
 import Button from "@/components/ui/button"
+import { Icons } from "./icons"
 
 interface IMobileNavProps {
   navLinks?: NavItem[]
@@ -40,7 +41,7 @@ const MobileNav = ({ navLinks }: IMobileNavProps) => {
       {!session ? (
         <div className="flex flex-col w-full space-y-2">
           <Link
-            href="/register"
+            href="/login"
             className="border border-brand-400 py-3 rounded-md text-center font-semibold text-sm hover:bg-brand-400 transition-colors duration-300"
           >
             Log In
@@ -56,7 +57,15 @@ const MobileNav = ({ navLinks }: IMobileNavProps) => {
           </Link>
         </div>
       ) : (
-        <Button>Logout</Button>
+        <button
+          onClick={() =>
+            signOut({ callbackUrl: `${window.location.origin}/login` })
+          }
+          className="border border-brand-400 py-3 rounded-md text-center font-semibold text-sm hover:bg-brand-400 transition-colors duration-300 w-full"
+        >
+          <Icons.logout className="mr-2 w-5 h-auto inline" />
+          Logout
+        </button>
       )}
     </motion.div>
   )
