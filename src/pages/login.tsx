@@ -1,4 +1,5 @@
 import React, { type ReactElement } from "react"
+import Head from "next/head"
 import Link from "next/link"
 import OnboardingLayout from "@/layouts/onboarding"
 import type { NextPageWithLayout } from "@/types"
@@ -11,6 +12,9 @@ import UserAuthForm from "@/components/user-auth-form"
 const LoginPage: NextPageWithLayout = () => {
   return (
     <>
+      <Head>
+        <title>WIAM - Login</title>
+      </Head>
       <header className="grid grid-cols-3 w-full h-[8vh] items-center">
         <div className="col-start-1 col-span-1">
           <Logo />

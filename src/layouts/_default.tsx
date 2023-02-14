@@ -1,4 +1,5 @@
 import React from "react"
+import Head from "next/head"
 import Link from "next/link"
 import { signOut, useSession } from "next-auth/react"
 
@@ -23,59 +24,64 @@ const DefaultLayout = ({
   const { data: session } = useSession()
 
   return (
-    <div className="w-full px-[1.5rem] xl:px-0 xl:container md:mx-auto max-w-8xl">
-      <header className="grid grid-cols-3 w-full h-[8vh] items-center">
-        <div className="col-start-1 col-span-1">
-          <Logo />
-        </div>
-        <div className="col-start-2 col-span-1 md:flex items-center hidden">
-          <NavLinks
-            items={siteConfig.mainNav}
-            classes="border border-brand-400 hidden md:flex items-center px-4 py-2 rounded-full max-w-[420px] justify-between"
-          />
-        </div>
-        <div className="col-start-3 col-span-1 md:flex justify-end items-center space-x-2 hidden">
-          {!session ? (
-            <>
-              <Link href="/login">
-                <Button size="mini">Log In</Button>
-              </Link>
-              <Link href="/register">
-                <Button color="white" size="mini">
-                  Get Started
-                  <Icons.rightArrow className="inline ml-1 w-4 h-auto" />
-                </Button>
-              </Link>
-            </>
-          ) : (
-            <Button
-              className="text-brand-50 hover:text-white"
-              onClick={() =>
-                signOut({ callbackUrl: `${window.location.origin}/login` })
-              }
-            >
-              <Icons.logout className="w-5 h-auto inline mr-2" />
-              Logout
-            </Button>
-          )}
-        </div>
+    <>
+      <Head>
+        <title>WIAM</title>
+      </Head>
+      <div className="w-full px-[1.5rem] xl:px-0 xl:container md:mx-auto max-w-8xl">
+        <header className="grid grid-cols-3 w-full h-[8vh] items-center">
+          <div className="col-start-1 col-span-1">
+            <Logo />
+          </div>
+          <div className="col-start-2 col-span-1 md:flex items-center hidden">
+            <NavLinks
+              items={siteConfig.mainNav}
+              classes="border border-brand-400 hidden md:flex items-center px-4 py-2 rounded-full max-w-[420px] justify-between"
+            />
+          </div>
+          <div className="col-start-3 col-span-1 md:flex justify-end items-center space-x-2 hidden">
+            {!session ? (
+              <>
+                <Link href="/login">
+                  <Button size="mini">Log In</Button>
+                </Link>
+                <Link href="/register">
+                  <Button color="white" size="mini">
+                    Get Started
+                    <Icons.rightArrow className="inline ml-1 w-4 h-auto" />
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <Button
+                className="text-brand-50 hover:text-white"
+                onClick={() =>
+                  signOut({ callbackUrl: `${window.location.origin}/login` })
+                }
+              >
+                <Icons.logout className="w-5 h-auto inline mr-2" />
+                Logout
+              </Button>
+            )}
+          </div>
 
-        <div className="col-span-2 col-start-3 inline-flex md:hidden justify-end">
-          {isOpen ? (
-            <button onClick={closeDrawer}>
-              <Icons.close className="w-10 h-10 cursor-pointer text-brand-50 hover:bg-brand-400 p-2 rounded-full transition-all duration-300" />
-            </button>
-          ) : (
-            <button onClick={() => openDrawer("DASHBOARD_SIDEBAR")}>
-              <Icons.menu className="w-10 h-10 cursor-pointer text-brand-50 hover:bg-brand-400 p-2 rounded-full transition-all duration-300" />
-            </button>
-          )}
-        </div>
-      </header>
-      {isOpen ? <MobileNav navLinks={siteConfig.mainNav} /> : null}
+          <div className="col-span-2 col-start-3 inline-flex md:hidden justify-end">
+            {isOpen ? (
+              <button onClick={closeDrawer}>
+                <Icons.close className="w-10 h-10 cursor-pointer text-brand-50 hover:bg-brand-400 p-2 rounded-full transition-all duration-300" />
+              </button>
+            ) : (
+              <button onClick={() => openDrawer("DASHBOARD_SIDEBAR")}>
+                <Icons.menu className="w-10 h-10 cursor-pointer text-brand-50 hover:bg-brand-400 p-2 rounded-full transition-all duration-300" />
+              </button>
+            )}
+          </div>
+        </header>
+        {isOpen ? <MobileNav navLinks={siteConfig.mainNav} /> : null}
 
-      <main className={cn("mx-auto", contentClassName)}>{children}</main>
-    </div>
+        <main className={cn("mx-auto", contentClassName)}>{children}</main>
+      </div>
+    </>
   )
 }
 
