@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "next/link"
+import { signOut, useSession } from "next-auth/react"
 
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
@@ -19,6 +20,8 @@ const DefaultLayout = ({
   contentClassName,
 }: React.PropsWithChildren<IDefaultLayoutProps>) => {
   const { isOpen, openDrawer, closeDrawer } = useDrawer()
+  const { data: session } = useSession()
+
   return (
     <div className="w-full px-[1.5rem] xl:px-0 xl:container md:mx-auto max-w-8xl">
       <header className="grid grid-cols-3 w-full h-[8vh] items-center">
@@ -32,14 +35,31 @@ const DefaultLayout = ({
           />
         </div>
         <div className="col-start-3 col-span-1 md:flex justify-end items-center space-x-2 hidden">
-          <Button size="mini">Log In</Button>
-          <Link href="/register">
-            <Button color="white" size="mini">
-              Get Started
-              <Icons.rightArrow className="inline ml-1 w-4 h-auto" />
+          {!session ? (
+            <>
+              <Link href="/login">
+                <Button size="mini">Log In</Button>
+              </Link>
+              <Link href="/register">
+                <Button color="white" size="mini">
+                  Get Started
+                  <Icons.rightArrow className="inline ml-1 w-4 h-auto" />
+                </Button>
+              </Link>
+            </>
+          ) : (
+            <Button
+              className="text-brand-50 hover:text-white"
+              onClick={() =>
+                signOut({ callbackUrl: `${window.location.origin}/login` })
+              }
+            >
+              <Icons.logout className="w-5 h-auto inline mr-2" />
+              Logout
             </Button>
-          </Link>
+          )}
         </div>
+
         <div className="col-span-2 col-start-3 inline-flex md:hidden justify-end">
           {isOpen ? (
             <button onClick={closeDrawer}>
