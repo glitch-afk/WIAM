@@ -1,6 +1,5 @@
 import React, { type ReactElement } from "react"
 import Head from "next/head"
-import DefaultLayout from "@/layouts/_default"
 import OnboardingLayout from "@/layouts/onboarding"
 
 import { Icons } from "@/components/icons"
@@ -15,7 +14,7 @@ const AddProject = () => {
       <Head>
         <title>WIAM - AddProject</title>
       </Head>
-      <header className="grid grid-cols-3 w-full h-[8vh] items-center">
+      <header className="grid grid-cols-3 w-full my-6 items-center">
         <div className="col-start-1 col-span-1">
           <Logo />
         </div>
@@ -26,7 +25,7 @@ const AddProject = () => {
           </Button>
         </div>
       </header>
-      <main className="flex items-center justify-center h-[92vh]">
+      <main className="flex justify-center mt-48 lg:mt-52 xl:mt-56 2xl:mt-64">
         <div className="w-full max-w-md rounded-xl border-2 border-brand-500 bg-brand-600 px-4 py-12">
           <h2 className="mb-5 text-center text-xl font-semibold">
             Add your first project
