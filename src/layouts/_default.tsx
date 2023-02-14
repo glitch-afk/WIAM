@@ -29,7 +29,7 @@ const DefaultLayout = ({
         <title>WIAM</title>
       </Head>
       <div className="w-full px-[1.5rem] xl:px-0 xl:container md:mx-auto max-w-8xl">
-        <header className="grid grid-cols-3 w-full h-[8vh] items-center">
+        <header className="grid grid-cols-3 w-full my-6 items-center">
           <div className="col-start-1 col-span-1">
             <Logo />
           </div>

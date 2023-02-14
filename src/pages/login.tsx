@@ -15,7 +15,7 @@ const LoginPage: NextPageWithLayout = () => {
       <Head>
         <title>WIAM - Login</title>
       </Head>
-      <header className="grid grid-cols-3 w-full h-[8vh] items-center">
+      <header className="grid grid-cols-3 w-full my-6 items-center">
         <div className="col-start-1 col-span-1">
           <Logo />
         </div>
@@ -29,7 +29,7 @@ const LoginPage: NextPageWithLayout = () => {
           </Button>
         </Link>
       </header>
-      <main className="flex items-center justify-center h-[92vh]">
+      <main className="flex justify-center mt-48 lg:mt-52 xl:mt-56 2xl:mt-64">
         <UserAuthForm cardTitle="Log in to your account">
           <p className="mt-8 text-center text-sm text-brand-100 underline underline-offset-2">
             Forgot Password?

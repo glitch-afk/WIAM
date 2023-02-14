@@ -16,7 +16,7 @@ const RegisterPage = () => {
       <Head>
         <title>WIAM - Register</title>
       </Head>
-      <header className="grid grid-cols-3 w-full h-[8vh] items-center">
+      <header className="grid grid-cols-3 w-full my-6 items-center">
         <div className="col-start-1 col-span-1">
           <Logo />
         </div>
@@ -30,7 +30,7 @@ const RegisterPage = () => {
           </Button>
         </Link>
       </header>
-      <main className="flex items-center justify-center h-[92vh]">
+      <main className="flex justify-center mt-48 lg:mt-52 xl:mt-56 2xl:mt-64">
         <UserAuthForm cardTitle="Create your Account">
           <p className="mt-8 text-center text-sm text-brand-100">
             You acknowledge that you read, and agree to our&nbsp;
