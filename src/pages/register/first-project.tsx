@@ -1,4 +1,5 @@
 import React, { type ReactElement } from "react"
+import Head from "next/head"
 import DefaultLayout from "@/layouts/_default"
 import OnboardingLayout from "@/layouts/onboarding"
 
@@ -11,6 +12,9 @@ import { Label } from "@/components/ui/label"
 const AddProject = () => {
   return (
     <>
+      <Head>
+        <title>WIAM - AddProject</title>
+      </Head>
       <header className="grid grid-cols-3 w-full h-[8vh] items-center">
         <div className="col-start-1 col-span-1">
           <Logo />

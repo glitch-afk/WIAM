@@ -1,5 +1,6 @@
 import React, { type ReactElement } from "react"
 import type { GetServerSidePropsContext } from "next"
+import Head from "next/head"
 import Link from "next/link"
 import OnboardingLayout from "@/layouts/onboarding"
 import { getServerAuthSession } from "@/server/auth"
@@ -12,6 +13,9 @@ import UserAuthForm from "@/components/user-auth-form"
 const RegisterPage = () => {
   return (
     <>
+      <Head>
+        <title>WIAM - Register</title>
+      </Head>
       <header className="grid grid-cols-3 w-full h-[8vh] items-center">
         <div className="col-start-1 col-span-1">
           <Logo />
