@@ -1,6 +1,5 @@
 import React, { type ReactElement } from "react"
 import Head from "next/head"
-import DefaultLayout from "@/layouts/_default"
 import OnboardingLayout from "@/layouts/onboarding"
 
 import { Icons } from "@/components/icons"
