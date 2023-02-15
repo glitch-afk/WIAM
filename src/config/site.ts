@@ -4,11 +4,18 @@ interface SiteConfig {
   name: string
   description: string
   mainNav: NavItem[]
+  homeNav: NavItem[]
   links: {
     twitter: string
     github: string
     docs: string
   }
+}
+
+export const siteRoutes = {
+  home: '/',
+  login: '/login',
+  register: '/register',
 }
 
 export const siteConfig: SiteConfig = {
@@ -17,23 +24,47 @@ export const siteConfig: SiteConfig = {
   mainNav: [
     {
       title: 'Home',
-      href: '/',
+      href: '/home',
       disabled: false,
+      external: false,
     },
     {
       title: 'Use Cases',
       href: '/use-cases',
       disabled: true,
+      external: false,
     },
     {
       title: 'Blog',
       href: '/blog',
       disabled: true,
+      external: false,
     },
     {
       title: 'Docs',
       href: '/docs',
       disabled: true,
+      external: false,
+    },
+  ],
+  homeNav: [
+    {
+      title: 'Feeback',
+      href: '/feedback',
+      disabled: true,
+      external: false,
+    },
+    {
+      title: 'Blog',
+      href: '/blog',
+      disabled: true,
+      external: false,
+    },
+    {
+      title: 'Docs',
+      href: '/docs',
+      disabled: true,
+      external: false,
     },
   ],
   links: {

@@ -15,7 +15,7 @@ interface ISiteHeaderProps {
 const SiteHeader = ({ children, navItems }: ISiteHeaderProps) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className="p-6 z-50 sticky top-0 w-full max-w-8xl mx-auto">
+    <div className="p-6 xl:px-0 z-50 sticky top-0 w-full max-w-8xl mx-auto">
       <div className="w-full flex justify-between items-center">
         <Logo />
         {children}

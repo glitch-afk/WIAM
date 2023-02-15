@@ -1,7 +1,8 @@
 import { type NextPage } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
 
-import { siteConfig } from '@/config/site'
+import { siteConfig, siteRoutes } from '@/config/site'
 import { Icons } from '@/components/icons'
 import MainNav from '@/components/main-nav'
 import SiteHeader from '@/components/site-header'
@@ -21,14 +22,18 @@ const Home: NextPage = () => {
           classes="md:flex border border-brand-400 justify-between px-3 py-1 max-w-[320px] lg:max-w-[420px] w-full rounded-full hidden"
         />
         <div className="md:flex space-x-2 hidden">
-          <Button size="small">Log in</Button>
-          <Button color="white" size="small">
-            Get Started
-            <Icons.rightArrow className="w-5 h-auto" />
-          </Button>
+          <Link href={siteRoutes.login}>
+            <Button size="small">Log in</Button>
+          </Link>
+          <Link href={siteRoutes.register}>
+            <Button color="white" size="small">
+              Get Started
+              <Icons.rightArrow className="w-5 h-auto" />
+            </Button>
+          </Link>
         </div>
       </SiteHeader>
-      <main className="max-w-8xl mx-auto px-6">
+      <main className="w-full px-6 xl:px-0 mx-auto max-w-8xl">
         <h1>Hello world</h1>
       </main>
     </>
