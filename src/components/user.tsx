@@ -16,14 +16,7 @@ const User = ({ userClasses }: { userClasses?: string }) => {
     >
       <Avatar className="w-6 sm:w-8 h-auto">
         <AvatarImage src={session?.user.image as string} />
-        <AvatarFallback>
-          <Image
-            src={'https://github.com/glitch-afk.png'}
-            fill
-            className="rounded-full"
-            alt="user_image"
-          />
-        </AvatarFallback>
+        <AvatarFallback>W</AvatarFallback>
       </Avatar>
       <span className="text-sm md:hidden lg:flex">{session?.user.email}</span>
     </div>
