@@ -1,10 +1,10 @@
 import React from 'react'
-import type { GetServerSidePropsContext } from 'next'
+// import type { GetServerSidePropsContext } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 
 import { siteRoutes } from '@/config/site'
-import { getServerAuthSession } from '@/lib/auth'
+// import { getServerAuthSession } from '@/lib/auth'
 import { Icons } from '@/components/icons'
 import SiteHeader from '@/components/site-header'
 import Button from '@/components/ui/button'
@@ -47,20 +47,20 @@ const Register = () => {
 
 export default Register
 
-export const getServerSideProps = async (
-  context: GetServerSidePropsContext
-) => {
-  const session = await getServerAuthSession(context)
-  if (session) {
-    return {
-      redirect: {
-        destination: '/',
-      },
-    }
-  }
-  return {
-    props: {
-      session,
-    },
-  }
-}
+// export const getServerSideProps = async (
+//   context: GetServerSidePropsContext
+// ) => {
+//   const session = await getServerAuthSession(context)
+//   if (session) {
+//     return {
+//       redirect: {
+//         destination: '/',
+//       },
+//     }
+//   }
+//   return {
+//     props: {
+//       session,
+//     },
+//   }
+// }

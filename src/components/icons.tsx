@@ -1,6 +1,7 @@
 import {
   Bell,
   ChevronRight,
+  CornerUpRight,
   Loader2,
   LogIn,
   LogOut,
@@ -19,6 +20,7 @@ export const Icons = {
   logout: LogOut,
   loader: Loader2,
   bell: Bell,
+  upRight: CornerUpRight,
   plus: Plus,
   rightArrow: ChevronRight,
   close: X,
