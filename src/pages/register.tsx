@@ -25,7 +25,7 @@ const Register = () => {
           </Button>
         </Link>
       </SiteHeader>
-      <main className="w-full px-6 xl:px-0 mx-auto max-w-8xl">
+      <main className="w-full px-6 2xl:px-0 mx-auto max-w-8xl">
         <div className="flex justify-center mt-48 lg:mt-52 xl:mt-56 2xl:mt-64">
           <UserAuthForm cardTitle="Create your Account">
             <p className="mt-8 text-center text-sm text-brand-100">

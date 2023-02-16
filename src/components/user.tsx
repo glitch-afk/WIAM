@@ -10,7 +10,7 @@ const User = ({ userClasses }: { userClasses?: string }) => {
   return (
     <div
       className={cn(
-        'p-1 lg:p-2 flex items-center text-brand-50 hover:text-white',
+        'p-1 lg:p-2 flex items-center text-brand-50 hover:text-white cursor-pointer hover:outline-1 hover:outline-brand-400',
         userClasses
       )}
     >

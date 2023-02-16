@@ -27,7 +27,7 @@ const ProjectsPage = () => {
           <User userClasses="bg-brand-500 space-x-3 rounded-full cursor-pointer" />
         </div>
       </SiteHeader>
-      <main className="w-full px-6 xl:px-0 mx-auto max-w-7xl md:mt-16">
+      <main className="w-full px-6 2xl:px-0 mx-auto max-w-7xl md:mt-16">
         <div className="w-full max-w-7xl h-fit rounded-xl border-2 border-brand-500 bg-brand-600 px-6 py-12">
           {/* header */}
           <div className="flex justify-between items-center">

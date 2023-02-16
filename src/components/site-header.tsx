@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import type { NavItem } from '@/types'
 
 import Logo from '@/components/site-logo'
-import Button from '@/components/ui/button'
-import { Icons } from './icons'
 import MobileNav from './mobile-nav'
 import Hamburger from './ui/hamburger'
 
@@ -15,7 +13,7 @@ interface ISiteHeaderProps {
 const SiteHeader = ({ children, navItems }: ISiteHeaderProps) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className="p-6 xl:px-0 z-50 sticky top-0 w-full max-w-8xl mx-auto">
+    <div className="p-6 2xl:px-0 z-50 sticky top-0 w-full max-w-8xl mx-auto">
       <div className="w-full flex justify-between items-center">
         <Logo />
         {children}
