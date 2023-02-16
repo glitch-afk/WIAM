@@ -1,11 +1,10 @@
 import React from 'react'
 import { useSearchParams } from 'next/navigation'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { signIn, useSession } from 'next-auth/react'
+import { signIn } from 'next-auth/react'
 import { useForm } from 'react-hook-form'
 import type { z } from 'zod'
 
-import { siteRoutes } from '@/config/site'
 import { userAuthSchema } from '@/lib/schema'
 import { cn } from '@/lib/utils'
 import { Icons } from '@/components/icons'
@@ -35,9 +34,6 @@ const UserAuthForm = ({
   })
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
   const searchParams = useSearchParams()
-  const { data: session } = useSession()
-
-  console.log(session)
 
   async function onSubmit(data: FormData) {
     setIsLoading(true)
@@ -83,7 +79,7 @@ const UserAuthForm = ({
         color="primary"
         onClick={() =>
           signIn('google', {
-            callbackUrl: siteRoutes.home,
+            callbackUrl: '/home',
           })
         }
       >

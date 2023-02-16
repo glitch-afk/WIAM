@@ -19,7 +19,6 @@
     "@prisma/client": "^4.9.0",
     "@radix-ui/react-avatar": "^1.0.1",
     "@radix-ui/react-label": "^2.0.0",
-    "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "lucide-react": "^0.114.0",
     "next": "13.1.6",

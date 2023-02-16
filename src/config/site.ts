@@ -13,7 +13,8 @@ interface SiteConfig {
 }
 
 export const siteRoutes = {
-  home: '/',
+  root: '/',
+  home: '/home',
   login: '/login',
   register: '/register',
 }
@@ -24,7 +25,7 @@ export const siteConfig: SiteConfig = {
   mainNav: [
     {
       title: 'Home',
-      href: '/home',
+      href: siteRoutes.home,
       disabled: false,
       external: false,
     },

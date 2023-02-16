@@ -10,7 +10,7 @@ interface IStatusCardProps {
   cardTitle?: string
   cardDescription?: string
   listingDate?: string
-  status?: STATUS_TYPE
+  status: STATUS_TYPE | string
 }
 
 const StatusCard = ({
@@ -27,15 +27,13 @@ const StatusCard = ({
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-2">
           <Avatar className="w-6 h-6 md:w-8 md:h-8">
-            <AvatarImage src="https://github.com/glitdch-afk.png" />
+            <AvatarImage src="" /> {/* Fetch url favicon  */}
             <AvatarFallback>W</AvatarFallback>
           </Avatar>
           <div>
-            <h3 className="font-bold text-sm sm:text-base">
-              {cardTitle ?? 'WIAM'}
-            </h3>
+            <h3 className="font-bold text-sm sm:text-base">{cardTitle}</h3>
             <p className="text-[11px] text-brand-100">
-              {listingDate ? `listed on ${listingDate}` : 'listed on 12th Mar'}
+              {listingDate && `listed on ${listingDate}`}
             </p>
           </div>
         </div>
@@ -47,12 +45,14 @@ const StatusCard = ({
             status === 'FAILED' && 'text-red-500 bg-red-300/30'
           )}
         >
-          Live •
+          {(status === 'SUCCESS' && 'LIVE') ||
+            (status === 'FAILED' && 'ERROR') ||
+            (status === 'DEFAULT' && 'SLEEPING')}
+          &nbsp; •
         </div>
       </div>
       <p className="text-xs text-brand-100 w-full mt-3 text-ellipsis overflow-hidden break-all">
-        {cardDescription ??
-          'Lorem ipsum dolor sit cdsr consectetur adipisicing elit. Accusantium, debitis.'}
+        {cardDescription}
       </p>
     </Link>
   )
