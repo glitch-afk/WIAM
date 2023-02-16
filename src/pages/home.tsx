@@ -8,6 +8,7 @@ import SiteHeader from '@/components/site-header'
 import StatusCard from '@/components/status-card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import Button from '@/components/ui/button'
+import User from '@/components/user'
 
 const ProjectsPage = () => {
   return (
@@ -18,17 +19,12 @@ const ProjectsPage = () => {
       </Head>
       <SiteHeader navItems={siteConfig.homeNav}>
         <div className="hidden md:flex items-center space-x-4">
-          <MainNav navItems={siteConfig.homeNav} classes="flex space-x-4" />
-          <Icons.bell className="w-6 sm:w-8 h-auto" />
-          <div className="rounded-full p-1 lg:p-2 flex items-center space-x-2 bg-brand-500">
-            <Avatar className="w-6 sm:w-8 h-auto">
-              <AvatarImage src="https://github.com/glitch-afk.png" />
-              <AvatarFallback>W</AvatarFallback>
-            </Avatar>
-            <span className="text-sm text-brand-50 hover:text-white hidden lg:flex">
-              john@email.com
-            </span>
-          </div>
+          <MainNav
+            navItems={siteConfig.homeNav}
+            classes="flex space-x-4 md:space-x-10"
+          />
+          <Icons.bell className="w-6 sm:w-10 h-auto" />
+          <User userClasses="bg-brand-500 space-x-3 rounded-full cursor-pointer" />
         </div>
       </SiteHeader>
       <main className="w-full px-6 xl:px-0 mx-auto max-w-7xl md:mt-16">
