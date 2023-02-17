@@ -1,8 +1,8 @@
-import { signOut, useSession } from "next-auth/react";
-import React from "react";
+import React from "react"
+import { signOut, useSession } from "next-auth/react"
 
 const Dashboard = () => {
-  const { data: session } = useSession();
+  const { data: session } = useSession()
   return (
     <>
       <div style={{ maxWidth: "60px" }}>
@@ -10,7 +10,7 @@ const Dashboard = () => {
       </div>
       <button onClick={() => signOut()}>Sign out</button>
     </>
-  );
-};
+  )
+}
 
-export default Dashboard;
+export default Dashboard

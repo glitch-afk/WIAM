@@ -1,3 +1,7 @@
 export default function Home() {
-  return <div>Index Page</div>;
+  return (
+    <div className="text-5xl font-bold text-black dark:text-blue-500">
+      Index Page
+    </div>
+  )
 }

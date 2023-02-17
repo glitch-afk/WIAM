@@ -1,5 +1,5 @@
 import "@/styles/globals.css"
-import type { AppProps, AppType } from "next/app"
+import type { AppType } from "next/app"
 import { Inter as FontSans } from "@next/font/google"
 import { type Session } from "next-auth"
 import { SessionProvider } from "next-auth/react"
@@ -21,7 +21,7 @@ const App: AppType<{ session: Session | null }> = ({
 					--font-sans: ${fontSans.style.fontFamily};
 				}
 			}`}</style>
-      <SessionProvider>
+      <SessionProvider session={session}>
         <Component {...pageProps} />
       </SessionProvider>
     </>
