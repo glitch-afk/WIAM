@@ -14,7 +14,7 @@ interface SiteConfig {
 
 export const siteRoutes = {
   root: "/",
-  home: "/home",
+  home: "/projects",
   login: "/login",
   register: "/register",
 }
